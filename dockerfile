@@ -3,6 +3,6 @@ RUN npm --version
 COPY . /app
 WORKDIR /app
 RUN npm install --unsafe-perm
-EXPOSE 3000/tcp 80/tcp
+EXPOSE 3000/tcp 80/tcp 443/tcp
 CMD [ "npm", "start" ]
 
