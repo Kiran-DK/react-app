@@ -4,5 +4,5 @@ COPY . /app
 WORKDIR /app
 RUN npm install --unsafe-perm
 EXPOSE 3000/tcp 80/tcp 443/tcp
-ENTRYPOINT [ "npm", "start" ]
+ENTRYPOINT [ "exec", "npm", "start" ]
 
