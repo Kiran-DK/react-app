@@ -1,5 +1,8 @@
 node {
  
+    stage 'Checkout'
+        checkout scm
+
     stage 'Build'
         sh "sudo docker build -t react-app ."
 
