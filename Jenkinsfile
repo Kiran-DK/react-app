@@ -1,11 +1,14 @@
 node {
+
+    def image
  
     stage 'Checkout'
         checkout scm
 
     stage 'Build'
-        docker.build("react-app", "-f Dockerfiles/application .")
+        image = docker.build("react-app", "-f Dockerfiles/application .")
 
     stage 'Deploy'
-        docker.image('react-app:latest').withRun('-p 80:3000') {}
+        image.run('-p 80:3000')
+ 
 }
