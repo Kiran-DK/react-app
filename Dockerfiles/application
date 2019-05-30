@@ -2,5 +2,5 @@ FROM node_modules
 COPY . /app
 WORKDIR /app
 EXPOSE 3000/tcp 80/tcp 443/tcp
-ENTRYPOINT [ "npm", "start" ]
+CMD [ "npm", "start" ]
 
