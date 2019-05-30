@@ -7,5 +7,5 @@ node {
         docker.build("react-app", "-f Dockerfiles/application .")
 
     stage 'Deploy'
-        docker.image('react-app:latest').withRun('-p 80:3000')
+        docker.image('react-app:latest').withRun('-p 80:3000') {}
 }
