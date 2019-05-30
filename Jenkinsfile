@@ -4,8 +4,8 @@ node {
         checkout scm
 
     stage 'Build'
-        sh "sudo docker build -f Dockerfiles/application -t react-app ."
+        docker.build("react-app", "./Dockerfiles/application")
 
     stage 'Deploy'
-        sh "sudo docker run -d -p 80:3000 -t react-app"
+        docker.image('react-app:latest').withRun('-p 80:3000')
 }
