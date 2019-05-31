@@ -26,5 +26,6 @@ node {
     stage('Deploy')
     {
         image.run('-p 80:3000')
+        sh 'docker ps -a'
     }
 }
