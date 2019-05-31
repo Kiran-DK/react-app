@@ -2,13 +2,18 @@ node {
 
     def image
  
-    stage 'Checkout'
+    stage('Checkout') 
+    {
         checkout scm
+    }
 
-    stage 'Build'
+    stage('Build')
+    {
         image = docker.build("react-app", "-f Dockerfiles/application .")
+    }
 
-    stage 'Deploy'
+    stage('Deploy')
+    {
         image.run('-p 80:3000')
- 
+    }
 }
